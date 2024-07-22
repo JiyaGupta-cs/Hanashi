@@ -4,10 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const app = express();
 
-let MONGO_URL;
-MONGO_URL =  "mongodb+srv://coderaholic21:8fSVxvADmFp62Wv4@cluster0.eea8kg6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-// Connect to MongoDB
+const MONGO_URL = process.env.MONGO_URL;
 mongoose.connect(MONGO_URL)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
