@@ -11,7 +11,7 @@ MONGO_URL =  "mongodb+srv://coderaholic21:8fSVxvADmFp62Wv4@cluster0.eea8kg6.mong
 mongoose.connect(MONGO_URL)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
- 
+    
 
 const PORT = process.env.PORT || 8000;
 const userRoute = require("./routes/user");
@@ -43,6 +43,6 @@ app.get('/', async (req, res) => {
 app.use("/user", userRoute);
 app.use("/blog", blogRoute);
 
-app.listen(PORT, () => {
+app.listen(PORT,  "0.0.0.0", () => {
     console.log(`Server Started at Port: ${PORT}`);
 });
